@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+    {% include "blog/blog_navbar.html" %}
+    <div class="container">
+        {% for article in articles %}
+            <div class="box">
+                <div class="card"> 
+                    <a href="{% pageurl article %}">
+                        <div class="c1x3">
+                            <div>
+                                {% image article.image fill-480x360-c100 as image %}
+                                <img src="{{ image.url }}" width="100%"
+                                    alt="{{ image.alt }}" class="" />
+                            </div>
+                            <div class="box">
+                                <h2>{{ article.title }}</h2>
+                                {% if article.categories %}
+                                    <div class="category">
+                                        {% for category in article.categories.all %}
+                                            <i class="far fa-bookmark"></i> {{ category }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                {% if article.body %}
+                                    {{ article.body|richtext }}
+                                {% endif %}
+                                <div>
+                                    <a class="button" href="{% pageurl article %}">Leer mas >></a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if articles.paginator.num_pages > 1 %}
+        <div class="container">
+            <div class="pagination">
+                {% if articles.has_previous %}
+                    <a href="?page={{ articles.previous_page_number }}" class="page-link">
+                        <span>&laquo;</span>
+                    </a>
+                {% endif %}
+
+                {% for page_num in articles.paginator.page_range %}
+                    <a href="?page={{ page_num }}" class="page-link">
+                        {{ page_num }}
+                    </a>
+                {% endfor %}
+
+                {% if articles.has_next %}
+                    <a href="?page={{ articles.next_page_number }}" class="page-link">
+                        <span>&raquo;</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    
+    {% include "blog/blog_footer.html" %}
+{% endblock %}

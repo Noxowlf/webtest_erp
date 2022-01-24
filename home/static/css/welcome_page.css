@@ -1,0 +1,45 @@
+body {
+    background-image: url("../imgs/Background.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.login-form {
+    padding: 10% 30%;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.button {
+    text-align: center;
+    border-radius: 5px;
+}
+
+input { 
+    padding: 5% 30%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.secondaryAction, h1 {
+    display: none;
+}
+
+.primaryAction { 
+    text-align: center;
+    padding: 2% 50%;
+    border-radius: 5px;
+    background-color: orange;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    border-color: white;
+}

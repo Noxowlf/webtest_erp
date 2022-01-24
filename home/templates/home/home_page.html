@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+{% endblock extra_css %}
+
+
+{% block content %}
+    <div class="login-form"> 
+        <div class="container card">
+            <img src="../static/imgs/Logo.png" width="95%"
+                alt="{{ image.alt }}" class="" />
+            <hr>
+            <h2>Login</h2>
+            <a href="{% url 'account_login' %}">
+                <div class="button">
+                    Iniciar
+                </div>
+            </a>
+        </div>
+    </div>
+
+{% endblock content %}
