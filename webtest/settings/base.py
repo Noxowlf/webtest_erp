@@ -109,8 +109,9 @@ WSGI_APPLICATION = 'webtest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'de4li16c86jiui',
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -180,8 +181,9 @@ WAGTAIL_SITE_NAME = "webtest"
 # https://docs.wagtail.io/en/stable/topics/search/backends.html
 WAGTAILSEARCH_BACKENDS = {
     'default': {
-        'BACKEND': 'wagtail.search.backends.database',
-    }
+        'BACKEND': 'wagtail.search.backends.db',
+        'INDEX': 'webtest',
+    },
 }
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -

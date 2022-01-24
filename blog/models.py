@@ -49,6 +49,7 @@ class BlogArticle(Page):
     categories = ParentalManyToManyField("blog.BlogCategory")
 
     search_fields = Page.search_fields + [
+        index.SearchField('title'),
         index.SearchField('body'),
     ]
 
@@ -68,6 +69,10 @@ class BlogCategory(models.Model):
 
     panels = [
         FieldPanel("name")
+    ]
+
+    search_fields = Page.search_fields + [
+        index.SearchField('name'),
     ]
 
     class Meta:

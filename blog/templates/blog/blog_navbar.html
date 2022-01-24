@@ -5,11 +5,13 @@
         <img class="left" src="../static/imgs/logo-min.png" width="220px"
             alt="{{ image.alt }}" class="" />
 
-        <div class="center">   
+        <!--<div class="center">   
             <input class="search-bar" placeholder="Busqueda">
             <img src="../static/imgs/Search_icon.png" width="50px"
                 alt="{{ image.alt }}" class="" />
-        </div>
+        </div>-->
+
+        {% include "blog/search_box.html" %}
         
         <a class="right"  href="{% url 'account_logout' %}">
             <img src="../static/imgs/avatar.png" width="65px"
