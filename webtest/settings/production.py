@@ -3,13 +3,13 @@ from .base import *
 DEBUG = False
 
 import  dj_database_url 
-DATABASES [ 'default' ]  =   dj_database_url . configuración ()
+DATABASES [ 'default' ] = dj_database_url.config ()
 	
 # Respete el encabezado 'X-Forwarded-Proto' para request.is_secure() 
-SECURE_PROXY_SSL_HEADER  =  ( 'HTTP_X_FORWARDED_PROTO' ,  'https' )
+SECURE_PROXY_SSL_HEADER = ( 'HTTP_X_FORWARDED_PROTO' ,  'https' )
 
 # Permitir todos los encabezados de host 
-ALLOWED_HOSTS  =  [ '*' ]
+ALLOWED_HOSTS = ['*']
 
 
 import os
