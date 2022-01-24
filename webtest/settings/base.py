@@ -107,7 +107,7 @@ WSGI_APPLICATION = 'webtest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd20n660bomljb',
+        'NAME': 'de4li16c86jiui',
     }
 }
 
