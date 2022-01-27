@@ -3,5 +3,5 @@
 *.swp
 /venv/
 /static/
-/media/
+/media/original_images/
 .env
