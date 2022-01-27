@@ -15,7 +15,7 @@ class BlogIndexPage(Page):
     def get_context(self, request):
         context = super(BlogIndexPage, self).get_context(request)
         all_articles = BlogArticle.objects.live().public().order_by('-first_published_at')
-        paginator = Paginator(all_articles, 4)
+        paginator = Paginator(all_articles, 3)
 
         page = request.GET.get("page")
         

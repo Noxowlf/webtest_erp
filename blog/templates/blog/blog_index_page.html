@@ -6,7 +6,7 @@
 
 {% block content %}
     {% include "blog/blog_navbar.html" %}
-    <div class="container">
+    <div class="container pt">
         {% for article in articles %}
             <div class="box">
                 <div class="card"> 
@@ -41,7 +41,7 @@
     </div>
 
     {% if articles.paginator.num_pages > 1 %}
-        <div class="container">
+        <div class="container mt5">
             <div class="pagination">
                 {% if articles.has_previous %}
                     <a href="?page={{ articles.previous_page_number }}" class="page-link">

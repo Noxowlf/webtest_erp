@@ -4,7 +4,8 @@
 {% block title %}Search{% if search_results %} results{% endif %}{% endblock %}
 
 {% block content %}
-<div class="container">
+{% include "blog/blog_navbar.html" %}
+<div class="container pt">
         <div class="box">
             <h1>
                 Search results
@@ -34,4 +35,6 @@
             {% endif %}
         </div>
 </div>
+
+{% include "blog/blog_footer.html" %}
 {% endblock content %}
